@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import Styles from '../../styles/Style.module.scss'
+
 const Input = (props: any) => {
     const [type, setType] = useState("text")
     useEffect(() => {

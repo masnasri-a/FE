@@ -1,0 +1,143 @@
+$red-color: #ea2728;
+$red-soft: #e68282;
+$soft-color: #fbfbfe;
+$dark: #313131;
+$bg-dark-soft: #fbfbfe;
+
+.bgSource {
+  background-color: $bg-dark-soft;
+}
+.mainMenu {
+  background-color: white;
+  height: 100vh;
+}
+
+.mediaMenuComponents {
+  padding-top: 30px;
+  background-color: $red-color;
+  height: 100vh;
+}
+
+.bgActive {
+  background-color: $red-soft;
+}
+.row {
+  --bs-gutter-x: 0rem;
+}
+.insideMediaSource {
+  cursor: pointer;
+  margin-top: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  transition: 1s;
+}
+.insideMediaSource:hover {
+  background-color: $red-soft;
+}
+
+.darkMode {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  margin-top: 58vh;
+}
+
+.logo {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+}
+
+.mediaSource {
+  margin-top: 10vh;
+}
+.leftMedia {
+  width: 80px;
+}
+.leftSourceMedia {
+  width: 275px;
+}
+.mainReprocessData {
+  width: 100%;
+}
+.ma {
+  margin: auto;
+}
+
+.titleMenu {
+  padding-left: 20px;
+  padding-top: 20px;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.logoSource {
+  margin-left: 10px;
+}
+
+.headerName {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.imagesHeader {
+  border-radius: 50%;
+}
+
+.HeaderComponents {
+  height: 80px;
+  width: 100%;
+  // background-color: #d6d6d6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.sourceMenu {
+  cursor: pointer;
+
+  // margin-left: 10px;
+  padding-left: 10px;
+  margin-right: 20px;
+  margin-top: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 100%;
+  align-items: center;
+  transition: 500ms;
+  // background-color: $red-color;
+}
+
+.sourceMenu:hover {
+  background-color: rgba(234, 39, 40, 0.05);
+  color: $red-color;
+}
+
+.sourceMenuActive {
+  background-color: rgba(234, 39, 40, 0.05);
+  color: $red-color;
+  border-right: 2px solid #ff0000;
+}
+
+.usernameHeader {
+  margin-left: 10px;
+}
+
+.selectMediaTags {
+  margin-left: 20px;
+  padding-left: 20px;
+  margin-right: 20px;
+  padding-right: 20px;
+  width: calc(100% - 40px);
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid $red-soft;
+  box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.06);
+  border-radius: 5px;
+  background-color: white;
+}

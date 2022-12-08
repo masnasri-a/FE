@@ -44,8 +44,8 @@ const Login = () => {
                             <div className={`d-flex justify-content-between ${Styles.afterButtonLogin} `} >
                                 <Link href="/forgot" style={{ textDecoration: 'none' }}><p className={`${Styles.colorRed} ${Styles.fontsize12}`}>Forgot my password?</p></Link>
                                 <div className={`d-flex ${Styles.fontsize12}`}>
-                                    Don't have an account?{"  "}
-                                    <Link href="/forgot" style={{ textDecoration: 'none' }}><p className={`${Styles.colorRed} ${Styles.fontsize12}`}> Sign up</p></Link>
+                                    Dont have an account?{"  "}
+                                    <Link href="/auth/register" style={{ textDecoration: 'none' }}><p className={`${Styles.colorRed} ${Styles.fontsize12}`}> Sign up</p></Link>
                                 </div>
 
                             </div>
