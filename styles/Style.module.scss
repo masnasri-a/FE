@@ -1,0 +1,81 @@
+$red-color: #EA2728;
+$red-soft: #e68282;
+$soft-color: #FBFBFE;
+
+
+.bgRed{
+    background-color: $red-color;
+}
+
+.afterButtonLogin{
+    margin-top: 10px;
+}
+
+.colorRed{
+    color: $red-color;
+    text-decoration: none;
+}
+
+.button{
+    background-color: #EA2728;
+    height: 40px;
+    width: 440px;
+    border-radius: 10px;
+    border-width: 0px;
+    color: white;
+}
+
+.button :hover{
+    background-color: #e68282;
+}
+
+.loginInput{
+    margin-top: 30px;
+}
+
+.input{
+    padding-left: 20px;
+    height: 50px;
+    width: 320px;
+    border-radius: 5px;
+    border: 1px solid #EA2728;
+    font-size: 12px;
+}
+
+.input:focus{
+    border: 1px solid #e68282;
+}
+
+.bgColor{
+    background-color: #FBFBFE;
+    height: 100vh;
+}
+
+.fontsize12{
+    font-size: 12px;
+}
+.fontsize14{
+    font-size: 14px;
+}
+.fontsize16{
+    font-size: 16px;
+}
+.fontsize18{
+    font-size: 18px;
+}
+.fontsize20{
+    font-size: 20px;
+}
+.fontsize32{
+    font-size: 32px;
+}
+
+
+
+
+
+
+
+.centerText{
+    text-align: center;
+}
