@@ -1,6 +1,7 @@
 import { useState } from "react";
 import LeftMediaMenu from "../components/leftMediaMenu";
 import LeftSourceMenu from "../components/leftSourceMenu";
+import LoginHandler from "../util/loginHandler";
 import Main from "./main";
 const Index = () => {
   const [media, setMedia] = useState("Online News");
@@ -24,6 +25,7 @@ const Index = () => {
 
   return (
     <>
+    <LoginHandler />
       <div className="menuReprocess">
         <div className="container-fluid">
           <div className="bgSource">

@@ -7,10 +7,10 @@ const Input = (props: any) => {
         if (props.type == "password") {
             setType("password")
         }
-    }, [])
+    }, [props.type])
     return (
         <>
-            <input className={Styles.input} type={type}>
+            <input onKeyPress={(e) => props.onKeyPress(e)} onChange={(e)=> props.onChange(e.target.value)} className={Styles.input} type={type}>
             </input>
         </>
     )

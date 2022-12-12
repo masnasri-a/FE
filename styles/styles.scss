@@ -3,6 +3,9 @@ $red-soft: #e68282;
 $soft-color: #fbfbfe;
 $dark: #313131;
 $bg-dark-soft: #fbfbfe;
+$bg-semi-dark : #E7E7E7;
+$bg-soft-red:rgba(234, 39, 40, 0.05);
+
 
 .bgSource {
   background-color: $bg-dark-soft;
@@ -41,7 +44,10 @@ $bg-dark-soft: #fbfbfe;
   cursor: pointer;
   display: flex;
   justify-content: center;
-  margin-top: 58vh;
+  // margin-top: 58vh;
+  position: absolute;
+  left: 30px;
+  bottom: 20px;
 }
 
 .logo {
@@ -140,4 +146,136 @@ $bg-dark-soft: #fbfbfe;
   box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.06);
   border-radius: 5px;
   background-color: white;
+}
+
+.buttonFile{
+  height: 40px;
+  width: 130px;
+  background-color: $bg-soft-red;
+  border-radius: 10px;
+  color: $red-color;
+  font-size: 14px;
+  border: 2px solid $red-color;
+}
+
+.upload{
+  display: flex;
+  justify-content: flex-end;
+  margin-right: calc(0% + 20px);
+  margin-top: 20px;
+}
+
+.checker{
+  display: flex;
+  justify-content: space-between;
+  margin-left: 20px;
+}
+.inputCheck{
+  padding-left: 20px;
+  font-size: 14px;
+  height: 40px;
+  width: calc(90% - 80px);
+  border-radius: 10px;
+  border: 2px solid $red-color;
+}
+
+.buttonCheck{
+  margin-left: 20px;
+  margin-right: 20px;
+  width: 98px;
+  height: 40px;
+  color: white;
+  background-color: $red-color;
+  // border: 2px solid $red-color;
+  border-width: 0px;
+  border-radius: 10px;
+}
+
+.buttonCheck:disabled{
+  background-color: $red-soft;
+}
+
+.checkerData{
+  margin-top: 20px;
+}
+
+.bgDark{
+  background-color: #E8E8E9;
+}
+
+.tableData{
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+
+.mediaTagsForm{
+  background-color: $bg-semi-dark;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: fit-content;
+  display: flex;
+}
+
+.sourceForm{
+  display: flex;
+  align-items: center;
+  height: 40px;
+}
+
+.buttonForm{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  height: 40px;
+}
+
+.submitTable{
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 20px;
+}
+
+.loading{
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: #31313164;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.leftSourceMenu{
+  height: 100vh;
+}
+
+.signOut{
+  background-color: $bg-semi-dark;
+  margin-top: calc(46vh);
+  margin-left: 40px;
+  margin-right: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  border-radius: 5px;
+  transition: 1s;
+  cursor: pointer;
+}
+.signOut:hover{
+  background-color: #313131;
+  color: white;
+}
+
+.signOut span{
+  margin-right: 10px;
 }

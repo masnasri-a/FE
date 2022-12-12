@@ -5,7 +5,7 @@ import MediaTagTimeFrame from "../mediaTags/timeframe";
 
 const MediaTags = (props: any) => {
 
-    const [selected, setSelected] = useState(<MediaTagAll/>)
+  const [selected, setSelected] = useState(<MediaTagAll />)
 
   const MENU = [
     {
@@ -22,13 +22,13 @@ const MediaTags = (props: any) => {
     },
   ];
 
-  const handleSelect = (param:any) => {
-    if (param.target.value == "media-tag-all"){
-        setSelected(<MediaTagAll/>)
-    }else if (param.target.value == "media-tag-by-id"){
-        setSelected(<MediaTagID/>)
-    }else if (param.target.value == "media-tag-by-timeframe"){
-        setSelected(<MediaTagTimeFrame/>)
+  const handleSelect = (param: any) => {
+    if (param.target.value == "media-tag-all") {
+      setSelected(<MediaTagAll />)
+    } else if (param.target.value == "media-tag-by-id") {
+      setSelected(<MediaTagID />)
+    } else if (param.target.value == "media-tag-by-timeframe") {
+      setSelected(<MediaTagTimeFrame />)
     }
   }
 
@@ -36,7 +36,7 @@ const MediaTags = (props: any) => {
 
   return (
     <>
-      <select onChange={(e)=>handleSelect(e)} className="selectMediaTags">
+      <select onChange={(e) => handleSelect(e)} className="selectMediaTags">
         {MENU.map((detail: any, index) => {
           return <option key={index} value={detail.value}>{detail.name}</option>;
         })}
