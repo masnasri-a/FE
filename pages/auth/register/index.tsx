@@ -1,123 +1,159 @@
-import Button from "../../components/button";
-import Input from "../../components/input";
-import Styles from "../../../styles/Style.module.scss";
 import Image from "next/image";
-import cuate from "../../../public/cuate.svg";
 import Link from "next/link";
+import React, { useState } from "react";
+import Button from "../component/button";
+import Input from "../component/input";
+import Logo from "./../../../public/cuate.svg";
+import Alert from "../../home/components/alert";
+import axios from "axios";
+import Router from "next/router";
+const Index = () => {
+  const [username, setUsername] = useState("");
+  const [fullname, setFullname] = useState("");
+  const [division, setDivision] = useState("BE");
+  const [password, setPassword] = useState("");
+  const [confirm, setConfirm] = useState("");
+  const [alert, setAlert] = useState(<></>);
 
-import { Dropdown, DropdownButton } from "react-bootstrap";
-
-const Login = () => {
+  const label = [
+    {
+      label: "Backend",
+      value: "BE",
+    },
+    {
+      label: "Frontend",
+      value: "FE",
+    },
+    {
+      label: "Quality Assurance",
+      value: "QA",
+    },
+    {
+      label: "Media Analyst",
+      value: "MA",
+    },
+  ];
+  const handleRegister = async (param: any) => {
+    if (
+      username == "" ||
+      fullname == "" ||
+      division == "" ||
+      password == "" ||
+      confirm == ""
+    ) {
+      setAlert(<Alert msg={"Please Check Field Again"} />);
+      const timer = setTimeout(() => {
+        setAlert(<></>);
+      }, 3000);
+      return () => clearTimeout(timer);
+    } else if (password != confirm) {
+      setAlert(<Alert msg={"Password Not Match"} />);
+      const timer = setTimeout(() => {
+        setAlert(<></>);
+      }, 3000);
+      return () => clearTimeout(timer);
+    } else {
+      await axios
+        .post("https://192.168.114.28:9100/auth/register", {
+          username: username,
+          full_name: fullname,
+          division: division,
+          password: password,
+        })
+        .then((resp) => {
+          Router.push("/auth/login");
+        })
+        .catch((err) => {
+          setAlert(<Alert msg={"Failed Register"} />);
+          const timer = setTimeout(() => {
+            setAlert(<></>);
+          }, 3000);
+          return () => clearTimeout(timer);
+        });
+    }
+  };
   return (
-    <>
-      <div className="container-fluid">
-        <div className="row">
-          <div
-            className={`col-6 d-flex justify-content-center align-items-center  ${Styles.bgColor}`}
-          >
-            <div className="imagesLogin">
-              <Image src={cuate} alt="Images" />
-              <p className={Styles.centerText}>Reporcess Data</p>
+    <div className="login d-flex">
+      {alert}
+      <div className="left">
+        <div className="title">
+          <Image
+            className="logoAuth"
+            layout="responsive"
+            src={Logo}
+            alt="logo"
+          />
+          <span>
+            Maecenas quam nunc, sagittis non condimentum at, rutrum sit amet
+            eros. Fusce rutrum, lectus in blandit sagittis, mi tortor.
+          </span>
+        </div>
+      </div>
+      <div className="right">
+        <div className="formLogin">
+          <p className="header">Create Account</p>
+          <span className="subHeader">Welcome to IMA Reprocess Platform</span>
+          <hr />
+          <span className="description">
+            Please put your credentials below to access your account.
+          </span>
+          <div className="input">
+            <div>
+              Username <span>*</span>
             </div>
+            <Input type={"text"} output={setUsername} />
           </div>
-          <div className="col-6 d-flex justify-content-center align-items-center">
-            <div
-              className={`loginPages ${Styles.centerText}`}
-              style={{ width: "450px" }}
-            >
-              <h3>Create Account</h3>
-              <p className={Styles.fontsize14}>
-                Welcome to IMA Reprocess Platform
-              </p>
-              <hr />
-              <span className={Styles.fontsize12}>
-                Please put your credentials below to access your account.
-              </span>
-              <div
-                className={` row d-flex align-items-center justify-content-between ${Styles.loginInput}`}
-              >
-                <div className="col-lg-3">
-                  <span className={Styles.fontsize14}>
-                    User Name<span className={Styles.colorRed}>*</span>
-                  </span>
-                </div>
-                <div className="col-lg-9">
-                  <Input />
-                </div>
-              </div>
-              <div
-                className={` row d-flex align-items-center justify-content-between ${Styles.loginInput}`}
-              >
-                <div className="col-lg-3">
-                  <span className={Styles.fontsize14}>
-                    Full Name<span className={Styles.colorRed}>*</span>
-                  </span>
-                </div>
-                <div className="col-lg-9">
-                  <Input />
-                </div>
-              </div>
-              <div
-                className={` row d-flex align-items-center justify-content-between ${Styles.loginInput}`}
-              >
-                <div className="col-lg-3">
-                  <span className={Styles.fontsize14}>
-                    Full Name<span className={Styles.colorRed}>*</span>
-                  </span>
-                </div>
-                <div className="col-lg-9">
-                  <select className={Styles.dropdownMenu}>
-                    <option value="BE">BackEnd Developers</option>
-                    <option value="FE">FrontEnd Developers</option>
-                    <option value="QA">Quality Assurance</option>
-                  </select>
-                </div>
-              </div>
-              <div
-                className={` row d-flex align-items-center justify-content-between ${Styles.loginInput}`}
-              >
-                <div className="col-lg-3">
-                  <span className={Styles.fontsize14}>
-                    Password<span className={Styles.colorRed}>*</span>
-                  </span>
-                </div>
-                <div className="col-lg-9">
-                  <Input type="password"/>
-                </div>
-              </div><div
-                className={` row d-flex align-items-center justify-content-between ${Styles.loginInput}`}
-              >
-                <div className="col-lg-3">
-                  <span className={Styles.fontsize14}>
-                    Confirmation Password<span className={Styles.colorRed}>*</span>
-                  </span>
-                </div>
-                <div className="col-lg-9">
-                  <Input type="password"/>
-                </div>
-              </div>
-              <div className={Styles.loginInput}>
-                <Button title={"Create my account"} />
-              </div>
-              <div
-                className={`d-flex justify-content-between ${Styles.afterButtonLogin} `}
-              >
-                <label htmlFor=""></label>
-                <div className={`d-flex ${Styles.fontsize12}`}>
-                  Have an account?{"  "}
-                  <Link href="/auth/login" style={{ textDecoration: "none" }}>
-                    <p className={`${Styles.colorRed} ${Styles.fontsize12}`}>
-                      {" "}
-                      Sign up
-                    </p>
-                  </Link>
-                </div>
-              </div>
+          <div className="input">
+            <div>
+              Full Name <span>*</span>
             </div>
+            <Input type={"text"} output={setFullname} />
+          </div>
+          <div className="input">
+            <div>
+              Division <span>*</span>
+            </div>
+            <select
+              name="division"
+              value={division}
+              onChange={(e) => setDivision(e.target.value)}
+              id="division"
+            >
+              {label.map((detail: any, index) => {
+                return (
+                  <option key={index} value={detail.value}>
+                    {detail.label}
+                  </option>
+                );
+              })}
+            </select>
+          </div>
+          <div className="input">
+            <div>
+              Password <span>*</span>
+            </div>
+            <Input type={"password"} output={setPassword} />
+          </div>
+          <div className="input">
+            <div>
+              Password <span>*</span>
+            </div>
+            <Input type={"password"} output={setConfirm} />
+          </div>
+          <Button name={"Access my account"} output={handleRegister} />
+          <div className="foot">
+            <p></p>
+            <p>
+              Have an account?{" "}
+              <Link className="red" href={"/auth/login"}>
+                Sign in
+              </Link>
+            </p>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
-export default Login;
+
+export default Index;

@@ -1,55 +1,72 @@
-import { useState } from "react";
-import LeftMediaMenu from "../components/leftMediaMenu";
-import LeftSourceMenu from "../components/leftSourceMenu";
-import LoginHandler from "../util/loginHandler";
-import Main from "./main";
+import React, { useEffect, useState } from "react";
+import {
+  BsArrowsAngleContract,
+} from "react-icons/bs";
+import Header from "./components/header";
+import Menu from "./components/menu";
+import Source from "./components/source";
+import Log from "./page/log";
+import MediaTags from "./page/mediatags";
+import Profile from "./page/profile";
 const Index = () => {
-  const [media, setMedia] = useState("Online News");
-  const [sources, setSources] = useState("Log")
-
-  const handleLeftMediaMenu = (media: any) => {
-    if (media == "rss") {
-      setMedia("Online News");
-    } else if (media == "tv") {
-      setMedia("Tv News");
-    } else if (media == "printer") {
-      setMedia("Printed News");
-    }
+  const [menu, setMenu] = useState(0);
+  const [show, setShow] = useState(true);
+  const [loadMenu, setLoadMenu] = useState(<Profile/>)
+  const handleSource = (param: any) => {
+    setMenu(param);
+    setShow(true)
   };
-
-  const handleSource = (source:any) => {
-    setSources(source)
-    console.log(source);
-    
+  const handleOutput = (param: any) => {
+    console.log(param);
+    setMenu(param);
+  };
+  const load = () =>{
+    if (menu == 0){
+      setLoadMenu(<Log/>)
+    }
+    else if(menu == 1){
+      setLoadMenu(<MediaTags/>)
+    }
+    else if (menu == 6){
+      setLoadMenu(<Profile/>)
+      console.log("profile");
+    }
   }
-
+  useEffect(()=>{
+    load()
+  },[menu])
   return (
-    <>
-    <LoginHandler />
-      <div className="menuReprocess">
-        <div className="container-fluid">
-          <div className="bgSource">
-            <div className="d-flex">
-              <div className="leftMedia">
-                <div className="leftMediaMenu">
-                  <LeftMediaMenu output={handleLeftMediaMenu} />
-                </div>
-              </div>
-              <div className="leftSourceMedia">
-                <div className="leftSource">
-                  <LeftSourceMenu media={media} output={handleSource}/>
-                </div>
-              </div>
-              <div className="mainReprocessData">
-                <div className="mainMenu">
-                    <Main media={media} source={sources} />
-                </div>
-              </div>
+    <div>
+      <div className="mainHome">
+        <Source output={handleSource} />
+        {show ? (
+          <>
+            <Menu source={menu} output={handleOutput} />
+            <div className="minimize" onClick={() => setShow(false)}>
+              <BsArrowsAngleContract size={20} />
             </div>
-          </div>
+          </>
+        ) : null}
+        <div className="menu">
+          {show ? (
+            <div className="w-normal">
+              <Header output={handleOutput} />
+              {
+                loadMenu
+              }
+            </div>
+          ) : (
+            <div className="w-full">
+              <Header output={handleOutput} />
+              {
+                loadMenu
+              }
+            </div>
+          )}
         </div>
       </div>
-    </>
+    </div>
   );
 };
+
 export default Index;

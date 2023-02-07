@@ -1,281 +1,364 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+
 $red-color: #ea2728;
 $red-soft: #e68282;
 $soft-color: #fbfbfe;
+$soft-bg: #f4f4f4;
 $dark: #313131;
 $bg-dark-soft: #fbfbfe;
-$bg-semi-dark : #E7E7E7;
-$bg-soft-red:rgba(234, 39, 40, 0.05);
+$bg-semi-dark: #e7e7e7;
+$border: #e8e8e9;
+$bg-soft-red: rgba(234, 39, 40, 0.05);
+$poppins: "Poppins", sans-serif;
+$word: #535353;
+$bg-input: #f9f9f9;
 
+* {
+  font-family: $poppins;
+}
+.login {
+  .left {
+    width: 50%;
+    height: 100vh;
+    background-color: $soft-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .title {
+      display: flex;
+      flex-wrap: wrap;
+      width: 50%;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 400;
+      span {
+        margin-top: 20px;
+      }
+    }
+  }
+  .right {
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    .header {
+      font-size: 32px;
+      font-weight: 600;
+    }
+    .subHeader {
+      font-size: 14px;
+    }
+    .formLogin {
+      width: 440px;
+    }
+    .description {
+      font-size: 12px;
+    }
+    .input {
+      margin-top: 10px;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 16px;
+      display: flex;
+      flex-direction: row;
+      height: 60px;
+      // background-color: rebeccapurple;
+      span {
+        color: $red-color;
+      }
+    }
+  }
+}
 
-.bgSource {
-  background-color: $bg-dark-soft;
-}
-.mainMenu {
-  background-color: white;
-  height: 100vh;
-}
-
-.mediaMenuComponents {
-  padding-top: 30px;
-  background-color: $red-color;
-  height: 100vh;
+.inputAuth {
+  border-radius: 10px;
+  border: 2px solid $border;
+  width: 70%;
+  height: 50px;
+  outline-color: $red-color;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
-.bgActive {
-  background-color: $red-soft;
-}
-.row {
-  --bs-gutter-x: 0rem;
-}
-.insideMediaSource {
-  cursor: pointer;
+.buttonAuth {
   margin-top: 20px;
+  width: 100%;
+  height: 40px;
+  border-radius: 10px;
+  border-width: 0px;
+  background-color: $red-color;
+  color: white;
+  transition: 1s;
+  :hover {
+    background-color: $red-soft !important;
+  }
+}
+.foot {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  Link {
+    color: $red-color;
+  }
+}
+
+.red {
+  color: $red-color;
+  text-decoration: none;
+  :focus {
+    color: #e68282;
+  }
+}
+
+#division {
+  border-radius: 10px;
+  border: 2px solid $border;
+  width: 70%;
+  height: 50px;
+  outline-color: $red-color;
+  padding-left: 20px;
+  padding-right: 20px;
+  appearance: none;
+}
+
+.source {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 100vh;
+  width: 80px;
+  background-color: $red-color;
+  .logo {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+  }
+  .listSource {
+    display: flex;
+    margin-top: 20vh;
+    display: block;
+  }
+}
+
+.selectMenu {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
   padding-top: 10px;
   padding-bottom: 10px;
-  display: flex;
-  justify-content: center;
+  margin-bottom: 20px;
   transition: 1s;
 }
-.insideMediaSource:hover {
+.selectMenuActive {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  transition: 1s;
+
   background-color: $red-soft;
 }
-
-.darkMode {
-  cursor: pointer;
+.mainHome {
   display: flex;
-  justify-content: center;
-  // margin-top: 58vh;
-  position: absolute;
-  left: 30px;
-  bottom: 20px;
 }
 
-.logo {
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-}
-
-.mediaSource {
-  margin-top: 10vh;
-}
-.leftMedia {
-  width: 80px;
-}
-.leftSourceMedia {
-  width: 275px;
-}
-.mainReprocessData {
-  width: 100%;
-}
-.ma {
-  margin: auto;
-}
-
-.titleMenu {
-  padding-left: 20px;
+.menuSidebar {
+  transition: 1s;
   padding-top: 20px;
   font-size: 16px;
   font-weight: 600;
-  margin-bottom: 20px;
+  position: absolute;
+  left: 80px;
+  top: 0px;
+  width: 300px;
+  height: 100vh;
+  background-color: $bg-dark-soft;
+  .title {
+    padding-left: 20px;
+  }
+  .listMenuBar {
+    color: $word;
+    margin-top: 2vh;
+    font-size: 16px;
+    font-weight: 400;
+  }
+  .menuSelected {
+    display: flex;
+    gap: 10px;
+    padding-left: 20px;
+    align-items: center;
+    padding-top: 10px;
+    margin-top: 10px;
+    padding-bottom: 10px;
+    height: 40px;
+    cursor: pointer;
+    transition: 1s;
+  }
+  .menuSelectedActive {
+    display: flex;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: 1s;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    align-items: center;
+    gap: 10px;
+    color: $red-color;
+    background: rgba(233, 38, 39, 0.05);
+    border-right: 2px solid #ff0000;
+    height: 40px;
+  }
 }
 
-.logoSource {
-  margin-left: 10px;
+.alerts {
+  position: absolute;
+  width: 100vw;
+  display: flex;
+  height: 50px;
+  margin-top: 20px;
+  justify-content: center;
+  transition: 1s;
+  .mainAlert {
+    width: 400px;
+    border: 2px solid $red-soft;
+    border-radius: 10px;
+    background-color: $red-color;
+    display: flex;
+    transition: 1s;
+    p {
+      margin: auto;
+      text-align: center;
+      color: white;
+      transition: 1s;
+    }
+  }
 }
-
-.headerName {
-  font-size: 24px;
-  font-weight: 600;
-}
-
-.imagesHeader {
-  border-radius: 50%;
-}
-
-.HeaderComponents {
-  height: 80px;
+.logout {
+  position: absolute;
+  bottom: 30px;
+  cursor: pointer;
+  display: flex;
   width: 100%;
-  // background-color: #d6d6d6;
+  height: 50px;
+  justify-content: center;
+  .menus {
+    display: flex;
+    width: 150px;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: $soft-bg;
+    border-radius: 5px;
+    border-width: 0px;
+    gap: 10px;
+    .icons {
+      background-color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+.headerMenu {
+  padding-top: 20px;
+  padding-right: 30px;
+  width: calc(100%);
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding-left: 30px;
-  padding-right: 30px;
+  span {
+    margin-left: 20px;
+    cursor: pointer;
+  }
 }
 
-.sourceMenu {
-  cursor: pointer;
-
-  // margin-left: 10px;
-  padding-left: 10px;
-  margin-right: 20px;
-  margin-top: 10px;
+.accountCard {
+  position: absolute;
+  z-index: 99;
+  right: 20px;
+  top: 70px;
+  width: 200px;
+  background-color: rgb(238, 220, 220);
+  border: 2px solid $red-color;
+  border-radius: 10px;
   padding-top: 10px;
   padding-bottom: 10px;
-  width: 100%;
-  align-items: center;
-  transition: 500ms;
-  // background-color: $red-color;
-}
-
-.sourceMenu:hover {
-  background-color: rgba(234, 39, 40, 0.05);
-  color: $red-color;
-}
-
-.sourceMenuActive {
-  background-color: rgba(234, 39, 40, 0.05);
-  color: $red-color;
-  border-right: 2px solid #ff0000;
-}
-
-.usernameHeader {
-  margin-left: 10px;
-}
-
-.selectMediaTags {
-  margin-left: 20px;
-  padding-left: 20px;
-  margin-right: 20px;
-  padding-right: 20px;
-  width: calc(100% - 40px);
-  height: 40px;
-  border-radius: 10px;
-  border: 1px solid $red-soft;
-  box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.06);
-  border-radius: 5px;
-  background-color: white;
-}
-
-.buttonFile{
-  height: 40px;
-  width: 130px;
-  background-color: $bg-soft-red;
-  border-radius: 10px;
-  color: $red-color;
-  font-size: 14px;
-  border: 2px solid $red-color;
-}
-
-.upload{
-  display: flex;
-  justify-content: flex-end;
-  margin-right: calc(0% + 20px);
-  margin-top: 20px;
-}
-
-.checker{
-  display: flex;
-  justify-content: space-between;
-  margin-left: 20px;
-}
-.inputCheck{
-  padding-left: 20px;
-  font-size: 14px;
-  height: 40px;
-  width: calc(90% - 80px);
-  border-radius: 10px;
-  border: 2px solid $red-color;
-}
-
-.buttonCheck{
-  margin-left: 20px;
-  margin-right: 20px;
-  width: 98px;
-  height: 40px;
-  color: white;
-  background-color: $red-color;
-  // border: 2px solid $red-color;
-  border-width: 0px;
-  border-radius: 10px;
-}
-
-.buttonCheck:disabled{
-  background-color: $red-soft;
-}
-
-.checkerData{
-  margin-top: 20px;
-}
-
-.bgDark{
-  background-color: #E8E8E9;
-}
-
-.tableData{
-  margin-left: 20px;
-  margin-right: 20px;
-  margin-top: 20px;
-}
-
-.mediaTagsForm{
-  background-color: $bg-semi-dark;
   padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  border-radius: 5px;
-  margin-left: 10px;
-  margin-right: 10px;
-  width: fit-content;
-  display: flex;
-}
-
-.sourceForm{
-  display: flex;
-  align-items: center;
-  height: 40px;
-}
-
-.buttonForm{
-  display: flex;
-  align-items: center;
-  justify-content: center;
   cursor: pointer;
-  height: 40px;
 }
 
-.submitTable{
-  display: flex;
-  justify-content: flex-end;
-  padding-top: 20px;
-}
-
-.loading{
-  width: 100vw;
-  height: 100vh;
+.w-normal {
   position: absolute;
-  top: 0px;
-  left: 0px;
-  background-color: #31313164;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  top: 10px;
+  right: 0px;
+  width: calc(100vw - 400px);
+}
+.w-full {
+  width: calc(100vw - 100px);
+
+  position: absolute;
+  top: 10px;
+  right: 0px;
 }
 
-.leftSourceMenu{
-  height: 100vh;
-}
-
-.signOut{
-  background-color: $bg-semi-dark;
-  margin-top: calc(46vh);
-  margin-left: 40px;
-  margin-right: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 50px;
-  border-radius: 5px;
-  transition: 1s;
+.minimize {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
   cursor: pointer;
-}
-.signOut:hover{
-  background-color: #313131;
-  color: white;
+  // border: 2px solid $red-soft;
+  top: 20px;
+  left: 340px;
+  // color: $red-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.signOut span{
-  margin-right: 10px;
+.mainProfile {
+  display: flex;
+  gap: 20px;
+  .photoProfile {
+    border-radius: 10px;
+  }
+  .formSetting {
+    width: 60%;
+    display: flex;
+    gap: 2%;
+    .firstname {
+      width: 49%;
+      div{
+        margin-bottom: 10px;
+      }
+    }
+    .lastname {
+      div{
+        margin-bottom: 10px;
+      }
+      width: 49%;
+    }
+    // background-color: #535353;
+  }
+}
+
+.inputSetting {
+  background-color: $bg-input;
+  border-width: 0px;
+  outline-color: $red-color;
+  padding-left: 20px;
+  height: 40px;
+  padding-right: 20px;
+  width: 100%;
 }
