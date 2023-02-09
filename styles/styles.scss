@@ -11,7 +11,10 @@ $border: #e8e8e9;
 $bg-soft-red: rgba(234, 39, 40, 0.05);
 $poppins: "Poppins", sans-serif;
 $word: #535353;
+$soft-word: #d9d9d9;
 $bg-input: #f9f9f9;
+$green: #65bc46;
+$orange: #fd7f0a;
 
 * {
   font-family: $poppins;
@@ -283,6 +286,7 @@ $bg-input: #f9f9f9;
 }
 
 .accountCard {
+  color: $red-color;
   position: absolute;
   z-index: 99;
   right: 20px;
@@ -302,6 +306,8 @@ $bg-input: #f9f9f9;
   top: 10px;
   right: 0px;
   width: calc(100vw - 400px);
+  height: 98vh;
+  overflow-y: scroll;
 }
 .w-full {
   width: calc(100vw - 100px);
@@ -309,6 +315,9 @@ $bg-input: #f9f9f9;
   position: absolute;
   top: 10px;
   right: 0px;
+
+  height: 98vh;
+  overflow-y: scroll;
 }
 
 .minimize {
@@ -334,20 +343,38 @@ $bg-input: #f9f9f9;
     border-radius: 10px;
   }
   .formSetting {
+    .multi {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
     width: 60%;
-    display: flex;
+    // display: flex;
     gap: 2%;
     .firstname {
       width: 49%;
-      div{
+      div {
         margin-bottom: 10px;
       }
     }
     .lastname {
-      div{
+      div {
         margin-bottom: 10px;
       }
       width: 49%;
+    }
+    .username {
+      div {
+        padding-bottom: 2px;
+        margin-bottom: 10px;
+      }
+      width: 100%;
+    }
+    .division {
+      div {
+        padding-top: 20px;
+      }
+      margin-bottom: 20px;
     }
     // background-color: #535353;
   }
@@ -361,4 +388,255 @@ $bg-input: #f9f9f9;
   height: 40px;
   padding-right: 20px;
   width: 100%;
+}
+
+#divisionMin {
+  height: 40px;
+  width: 100%;
+  background-color: $bg-input;
+  border-width: 0px;
+  padding-left: 20px;
+  outline-color: $red-color;
+  margin-top: 10px;
+}
+
+.buttonSave {
+  font-size: 14px;
+  height: 40px;
+  width: 180px;
+  background-color: $red-color;
+  color: white;
+  border-width: 0px;
+  border-radius: 10px;
+}
+.buttonSave:disabled {
+  background-color: $red-soft;
+}
+
+.updatePassword {
+  width: 100%;
+  height: max-content;
+  background-color: $bg-input;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  span {
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+  .updates {
+    display: flex;
+    gap: 20px;
+    height: 40px;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 20px;
+    width: max-content;
+    span {
+      align-items: center;
+      margin: auto;
+      color: $red-color;
+      cursor: pointer;
+    }
+  }
+}
+
+.inputPass {
+  border: 1px solid $soft-word;
+  outline-color: $red-color;
+  padding-left: 20px;
+  height: 40px;
+  border-radius: 5px;
+  padding-right: 20px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.inputCheck {
+  width: 100%;
+  height: 40px;
+  border-radius: 10px;
+  border: 2px solid $border;
+  outline-color: $red-color;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: $word;
+}
+
+.sigleCheck {
+  width: calc(100% - 220px);
+}
+
+.checking {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 20px;
+}
+
+.table {
+  position: relative;
+  table,
+  th,
+  td {
+    border: 1px solid $border;
+    border-collapse: collapse;
+    height: 40px;
+  }
+  tr th {
+    background-color: $soft-bg;
+    text-align: center;
+    font-weight: 500;
+  }
+  .info {
+    margin: auto;
+    width: 100%;
+    // background-color: rebeccapurple;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .infos {
+      cursor: pointer;
+    }
+  }
+  .batchIdInfo {
+    padding-left: 20px;
+  }
+  .statusInfo {
+    text-align: center;
+  }
+  table {
+    margin-top: 20px;
+    width: 98%;
+  }
+  .batchId {
+    width: 70%;
+  }
+  .status {
+    width: 25%;
+  }
+}
+
+.statusSuccessValue {
+  margin: auto;
+  background-color: $green;
+  width: 100px;
+  border-radius: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: white;
+}
+.statusPendingValue {
+  background-color: $orange;
+  width: 100px;
+  margin: auto;
+  color: white;
+  border-radius: 5px;
+
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.statusFailedValue {
+  background-color: $red-color;
+  color: white;
+  width: 100px;
+  margin: auto;
+  border-radius: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.fullPage {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 199;
+  width: 100vw;
+  height: 100vh;
+  background-color: #00000054;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.footerTable {
+  display: flex;
+  justify-content: flex-end;
+  // background-color: red;
+  display: flex;
+  margin-top: 10px;
+  padding-right: 20px;
+  gap: 10px;
+  .num {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    cursor: pointer;
+
+    height: 40px;
+  }
+  .side {
+    height: 40px;
+    width: 40px;
+    border-radius: 10px;
+    color: white;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .side:hover{
+    background-color: $red-soft;
+  }
+}
+.cardDetailLog {
+  z-index: 200;
+  background-color: white;
+  width: 400px;
+  height: max-content;
+  pointer-events: none;
+  border-radius: 10px;
+  padding: 20px;
+  color: #707070;
+  .top {
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+    cursor: copy;
+  }
+  .info {
+    padding-bottom: 120px;
+  }
+  div {
+    display: flex;
+    justify-content: space-between;
+    span {
+      word-spacing: 10px;
+    }
+    p {
+      width: 50%;
+    }
+  }
+}
+
+.relative {
+  // background-color: red;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100vw;
+  height: 100vh;
+}
+
+.c-green {
+  color: $green;
+}
+
+.c-orange {
+  color: $orange;
+}
+
+.c-red {
+  color: $red-color;
 }
