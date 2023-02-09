@@ -54,7 +54,7 @@ const Index = () => {
       return () => clearTimeout(timer);
     } else {
       await axios
-        .post("https://192.168.114.28:9100/auth/register", {
+        .post("http://192.168.114.28:9100/auth/register", {
           username: username,
           full_name: fullname,
           division: division,

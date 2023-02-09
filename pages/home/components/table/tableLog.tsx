@@ -36,7 +36,7 @@ const TableLog = (props: any) => {
     }
     await axios
       .get(
-        "https://192.168.114.28:9100/log/show-all/?page_num=" +
+        "http://192.168.114.28:9100/log/show-all/?page_num=" +
           page +
           "&limit=" +
           limit +

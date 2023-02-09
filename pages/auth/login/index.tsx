@@ -22,7 +22,7 @@ const Index = () => {
     console.log(password);
     await axios
       .get(
-        "https://192.168.114.28:9100/auth/login?username=" +
+        "http://192.168.114.28:9100/auth/login?username=" +
           username +
           "&password=" +
           password
